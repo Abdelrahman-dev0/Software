@@ -13,7 +13,14 @@
 					"name": "Login",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "b00116dcf0f58ac7e6a0d50c45be1f13",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"email\":\"ArthurMorgan@gmail.com\",\r\n    \"password\":\"123456789\"\r\n}",
@@ -247,6 +254,45 @@
 							"path": [
 								"qualifications",
 								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Qualification By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/qualifications/qualification/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"qualifications",
+								"qualification",
+								"4"
 							]
 						}
 					},
@@ -500,13 +546,45 @@
 							"path": [
 								"applicants",
 								"all"
-							],
-							"query": [
-								{
-									"key": "search",
-									"value": "useruseruser2",
-									"disabled": true
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Applicant By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/applicants/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"applicants",
+								"user",
+								"4"
 							]
 						}
 					},
@@ -640,6 +718,45 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Read Job By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/jobs/job/58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"jobs",
+								"job",
+								"58"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -676,7 +793,20 @@
 					"name": "Search History",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/search/history/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"search",
+								"history",
+								"13"
+							]
+						}
 					},
 					"response": []
 				}
