@@ -72,10 +72,10 @@ Software is a web application that helps applicants find jobs and allows admins 
 
 ### Search
 
-- `GET /api/search?position=<position>&offer=<offer>&qualification=<qualification>`: searches for jobs based on the given parameters. Returns an array of job objects that match the search criteria.
+- `GET /api/search//:id?position=<position>&offer=<offer>&qualification=<qualification>`: searches for jobs based on the given parameters. Returns an array of job objects that match the search criteria.
 
 ### Search History
 
-- `GET /api/search-history`: gets the search history of the currently logged in applicant. Returns an array of search history objects that contain the search parameters and the timestamp of the search. 
+- `GET /api/search/history/:id`: gets the search history of the currently logged in applicant. Returns an array of search history objects that contain the search parameters and the timestamp of the search. 
 
 © 2023 Software. All rights reserved.
