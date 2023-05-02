@@ -122,6 +122,21 @@ class JobController {
       res.status(500).json({ errors: [{ msg: "Internal server error" }] });
     }
   };
+
+  getByid = async (req, res) => {
+    try {
+      const job = await this.jobService.getJobById(req.params.id);
+
+      if (!job) {
+        return res.status(404).json({ msg: "Job not found!" });
+      }
+
+      return res.status(200).json(job);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ errors: [{ msg: "Internal server error" }] });
+    }
+  };
 }
 
 module.exports = JobController;

@@ -12,18 +12,23 @@ const UserRepository = require("./UserRepository");
 const LoginController = require("./LoginController");
 const LogoutController = require("./LogoutController");
 const RegisterController = require("./RegisterController");
-
+const authorize = require("../../middleware/authorize");
 const userRepository = new UserRepository(dbConnection);
 
 const loginController = new LoginController(userRepository);
 router.post(
   "/login",
+  authorize,
   [check("email").isEmail(), check("password").notEmpty()],
   loginController.login.bind(loginController)
 );
 
 const logoutController = new LogoutController(userRepository);
-router.post("/logout", logoutController.logout.bind(logoutController));
+router.post(
+  "/logout",
+  authorize,
+  logoutController.logout.bind(logoutController)
+);
 
 const registerController = new RegisterController(userRepository);
 router.post(

@@ -5,7 +5,8 @@ const UserRepository = require("../Applicants/UserRepository");
 const SearchRepository = require("./SearchRepository");
 const SearchService = require("./SearchService");
 const dbConnection = require("../../db/dbConnection");
-
+const admin = require("../../middleware/admin");
+const authorize = require("../../middleware/authorize");
 const router = express.Router();
 
 // Initialize the user and search repositories
@@ -20,6 +21,7 @@ const searchController = new SearchController(
 // Search route
 router.get(
   "/:id",
+  authorize,
   [
     param("id")
       .notEmpty()
@@ -34,6 +36,7 @@ router.get(
 // Search history route
 router.get(
   "/history/:id",
+  authorize,
   [
     param("id")
       .notEmpty()

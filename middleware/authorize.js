@@ -1,16 +1,22 @@
-const conn = require("../db/dbConnection");
-const util = require("util");
+const dbConnection = require("../db/dbConnection");
 
 const authorized = async (req, res, next) => {
-  const query = util.promisify(conn.query).bind(conn); // Transform Query mysql --> promis to use [ await, async ]
   const { token } = req.headers;
-  const user = await query("select * from users where token = ?", [token]);
-  if (user[0]) {
-    next();
-  } else {
-    res
-      .status(403)
-      .json({ msg: "You are not Authorized to access this route !" });
+  try {
+    const results = await dbConnection.executeQuery(
+      "SELECT * FROM users WHERE token = ?",
+      [token]
+    );
+    if (results.length > 0) {
+      next();
+    } else {
+      res
+        .status(403)
+        .json({ msg: "You are not authorized to access this route!" });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 

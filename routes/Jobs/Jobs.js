@@ -4,7 +4,7 @@ const JobController = require("./JobController");
 const JobService = require("./JobService");
 const JobRepository = require("./JobRepository");
 const db = require("../../db/dbConnection");
-
+const admin = require("../../middleware/admin");
 const jobRepository = new JobRepository(db);
 const jobService = new JobService(jobRepository);
 const jobController = new JobController(jobService);
@@ -13,6 +13,7 @@ const router = express.Router();
 
 router.post(
   "/create",
+  admin,
   [
     body("position").notEmpty().withMessage("Position is required"),
     body("description").notEmpty().withMessage("Description is required"),
@@ -29,6 +30,7 @@ router.post(
 
 router.put(
   "/update/:id",
+  admin,
   [
     body("position").notEmpty().withMessage("Position is required"),
     body("description").notEmpty().withMessage("Description is required"),
@@ -43,8 +45,10 @@ router.put(
   jobController.update
 );
 
-router.delete("/delete/:id", jobController.delete);
+router.delete("/delete/:id", admin, jobController.delete);
 
-router.get("/all", jobController.getAll);
+router.get("/all", admin, jobController.getAll);
+
+router.get("/job/:id",admin, jobController.getByid);
 
 module.exports = router;

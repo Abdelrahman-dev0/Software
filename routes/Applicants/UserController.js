@@ -107,7 +107,7 @@ class UserController {
     }
   }
 
-  //READ ALL APPLICANTS [ Admin ]
+  // READ ALL APPLICANTS [ Admin ]
   async getAllUsers(req, res) {
     try {
       const users = await this.userRepository.getAllUsers();
@@ -118,6 +118,21 @@ class UserController {
     } catch (error) {
       console.error(error);
       res.status(500).json({ err: "Internal Server Error" });
+    }
+  }
+
+  // READ APPLICANT BY ID [ Admin ]
+  async getUserById(req, res) {
+    try {
+      const user = await this.userRepository.getUserById(req.params.id);
+      if (!user) {
+        return res.status(404).json({ msg: "User not found" });
+      }
+      delete user.password;
+      res.status(200).json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal server error" });
     }
   }
 }

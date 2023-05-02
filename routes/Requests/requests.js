@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const dbConnection = require("../../db/dbConnection");
+const admin = require("../../middleware/admin");
+const authorize = require("../../middleware/authorize");
 const { UserRequestRepository } = require("./UserRequestRepository");
 const {
   GetAllUserRequestsController,
@@ -24,6 +26,7 @@ const applyForJobController = new ApplyForJobController(userRequestRepository);
 
 router.get(
   "/all",
+  admin,
   getAllUserRequestsController.handleGetAllRequests.bind(
     getAllUserRequestsController
   )
@@ -31,6 +34,7 @@ router.get(
 
 router.put(
   "/update/:id",
+  admin,
   updateUserRequestController.handleRequestUpdate.bind(
     updateUserRequestController
   )
@@ -38,6 +42,7 @@ router.put(
 
 router.post(
   "/apply/:id",
+  authorize,
   applyForJobController.handleApplyForJob.bind(applyForJobController)
 );
 

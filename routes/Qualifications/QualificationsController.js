@@ -102,6 +102,23 @@ class QualificationsController {
       res.status(500).json({ errors: [{ msg: "Internal server error" }] });
     }
   };
+
+  getbyid = async (req, res) => {
+    try {
+      const qualification = await this.qualificationsService.getById(
+        req.params.id
+      );
+
+      if (!qualification) {
+        return res.status(404).json({ msg: "Job not found!" });
+      }
+
+      return res.status(200).json(qualification);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ errors: [{ msg: "Internal server error" }] });
+    }
+  };
 }
 
 module.exports = { QualificationsController };
