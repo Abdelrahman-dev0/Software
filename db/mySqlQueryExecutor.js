@@ -6,6 +6,7 @@ class MySqlQueryExecutor extends QueryExecutor {
     this.connection = connection;
   }
 
+  /*  the LSP by substituting the abstract QueryExecutor class with a concrete MySqlQueryExecutor class */
   executeQuery(query, params) {
     return new Promise((resolve, reject) => {
       this.connection.query(query, params, (err, result) => {

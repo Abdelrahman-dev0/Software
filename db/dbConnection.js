@@ -2,6 +2,9 @@ const { DbConnection } = require("./db");
 const { MySqlQueryExecutor } = require("./mySqlQueryExecutor");
 const { MySqlConnector } = require("./mySqlConnector");
 
+/* creates an instance of a DbConnection
+Open-Closed Principle (OCP) by allowing new types of database connectors
+and query executors to be added without modifying existing code */
 const config = {
   host: "localhost",
   user: "root",
