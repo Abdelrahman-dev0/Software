@@ -1,6 +1,7 @@
 /* The SearchController class has a single responsibility of handling the search requests and responses. (SRP) /
 / SearchController class depends on an abstraction (searchService). /
 / The constructor takes a single parameter (searchService). (DI) */
+const { formatDate } = require("../../Utils/utils");
 
 class SearchController {
   constructor(searchService) {
