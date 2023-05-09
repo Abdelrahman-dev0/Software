@@ -47,7 +47,9 @@ class ApplyForJobController {
       res.status(200).json({ msg: "Job request sent successfully!" });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ errors: [{ msg: "Internal server error" }] });
+      return res
+        .status(500)
+        .json({ errors: [{ msg: "Internal server error" }] });
     }
   }
 }

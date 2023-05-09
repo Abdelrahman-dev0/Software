@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "ef4bc187-eca8-4fd5-ae68-e28bcd4260d6",
+		"_postman_id": "60916ff5-401c-429d-9d02-b4f72ad22473",
 		"name": "Software",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26739985"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -17,8 +16,7 @@
 							{
 								"key": "token",
 								"value": "b00116dcf0f58ac7e6a0d50c45be1f13",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"body": {
@@ -87,7 +85,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"user user 00\",\r\n    \"password\":\"123456789\",\r\n    \"email\":\"mosalah@gmail.com\",\r\n    \"phone\":\"12345678910\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Mo Salah Salah\",\r\n    \"password\":\"123456789\",\r\n    \"email\":\"mosalah1@gmail.com\",\r\n    \"phone\":\"12345678910\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -156,7 +154,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
 								"type": "text"
 							}
 						],
@@ -170,7 +168,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/qualifications/update/37",
+							"raw": "http://localhost:4000/qualifications/update/42",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -179,7 +177,7 @@
 							"path": [
 								"qualifications",
 								"update",
-								"37"
+								"42"
 							]
 						}
 					},
@@ -192,7 +190,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
 								"type": "text"
 							}
 						],
@@ -206,7 +204,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/qualifications/delete/261",
+							"raw": "http://localhost:4000/qualifications/delete/42",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -215,7 +213,7 @@
 							"path": [
 								"qualifications",
 								"delete",
-								"261"
+								"42"
 							]
 						}
 					},
@@ -324,7 +322,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/requests/update/118",
+							"raw": "http://localhost:4000/requests/update/172",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -333,7 +331,7 @@
 							"path": [
 								"requests",
 								"update",
-								"118"
+								"172"
 							]
 						}
 					},
@@ -366,7 +364,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Request",
+					"name": "User Send Request",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -413,13 +411,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"name name a\",\r\n    \"email\":\"user20001@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
+							"raw": "{\r\n    \"name\":\"name name a\",\r\n    \"email\":\"user200011@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -442,19 +440,19 @@
 					"response": []
 				},
 				{
-					"name": "update Applicant",
+					"name": "Update Applicant",
 					"request": {
 						"method": "PUT",
 						"header": [
 							{
 								"key": "token",
-								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"AuserUserUser1234\",\r\n    \"email\":\"user4011@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
+							"raw": "{\r\n    \"name\":\"user one 500\",\r\n    \"email\":\"user1@gmail.com\",\r\n    \"phone\":\"12345678910\",\r\n    \"password\":\"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -462,7 +460,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/applicants/update/22",
+							"raw": "http://localhost:4000/applicants/update/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -471,7 +469,7 @@
 							"path": [
 								"applicants",
 								"update",
-								"22"
+								"2"
 							]
 						}
 					},
@@ -484,7 +482,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "2747c60dc69db2bbd45349f3adf4ec43",
+								"value": "83dbcf9d38c2c2da0f77b6d62400b59c",
 								"type": "text"
 							}
 						],
@@ -608,7 +606,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"position\":\"Test Job Devloper1\",\r\n    \"description\":\"Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"4000.00\",\r\n    \"max_candidate_number\":\"10\",\r\n    \"qualifications\": [5,8]\r\n}",
+							"raw": "{\r\n    \"position\":\"Tester 5\",\r\n    \"description\":\"Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"4000.00\",\r\n    \"max_candidate_number\":\"10\",\r\n    \"qualifications\": [5,8]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -643,7 +641,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"position\":\"Full Stack Developer\",\r\n    \"description\":\"B Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"5000\",\r\n    \"max_candidate_number\":\"20\",\r\n    \"qualifications\": [2, 4, 1]\r\n}",
+							"raw": "{\r\n    \"position\":\"Full Stack Developer\",\r\n    \"description\":\"B Any valid descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription\",\r\n    \"offer\":\"5000\",\r\n    \"max_candidate_number\":\"20\",\r\n    \"qualifications\": [2]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -651,7 +649,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/jobs/update/15",
+							"raw": "http://localhost:4000/jobs/update/65",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -660,7 +658,7 @@
 							"path": [
 								"jobs",
 								"update",
-								"15"
+								"65"
 							]
 						}
 					},
@@ -678,7 +676,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:4000/jobs/delete/1600",
+							"raw": "http://localhost:4000/jobs/delete/63",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -687,7 +685,7 @@
 							"path": [
 								"jobs",
 								"delete",
-								"1600"
+								"63"
 							]
 						}
 					},
@@ -767,9 +765,15 @@
 					"name": "Search",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "ce1f178e60cbedf19fdea78b405211d9",
+								"type": "default"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:4000/search/2?search=Android Developer",
+							"raw": "http://localhost:4000/search/2?search=full",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -782,7 +786,7 @@
 							"query": [
 								{
 									"key": "search",
-									"value": "Android Developer"
+									"value": "full"
 								}
 							]
 						}
@@ -793,9 +797,15 @@
 					"name": "Search History",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "ce1f178e60cbedf19fdea78b405211d9",
+								"type": "default"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:4000/search/history/13",
+							"raw": "http://localhost:4000/search/history/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -804,7 +814,7 @@
 							"path": [
 								"search",
 								"history",
-								"13"
+								"2"
 							]
 						}
 					},
