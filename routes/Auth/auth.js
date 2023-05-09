@@ -4,9 +4,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { validationResult, check } = require("express-validator");
-const bcrypt = require("bcrypt");
-const crypto = require("crypto");
+const { check } = require("express-validator");
 const dbConnection = require("../../db/dbConnection");
 const UserRepository = require("./UserRepository");
 const LoginController = require("./LoginController");

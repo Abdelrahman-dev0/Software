@@ -12,6 +12,7 @@ class UserRepository {
       const results = await this.dbConnection.executeQuery(
         "INSERT INTO users(name, email, password, phone, token) VALUES (?, ?, ?, ?, ?)",
         [
+          // object destructuring {}
           userData.name,
           userData.email,
           userData.password,

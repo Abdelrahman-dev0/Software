@@ -2,9 +2,8 @@
 /* 2- This class depends on ( UserRepository ) abstraction. ( DIP ) */
 /* 3- The constructor takes a single parameter ( UserRepository ). ( DI ) */
 
-const { body, validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const crypto = require("crypto");
 
 class LoginController {
   constructor(userRepository) {
