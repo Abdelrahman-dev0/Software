@@ -2,7 +2,7 @@
 /* 2- UserController class depends on an abstraction ( UserRepository ). */
 /* 3- The constructor takes a single parameter ( UserRepository ). ( DI ) */
 
-const { body, validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 
@@ -25,7 +25,7 @@ class UserController {
         req.body.email
       );
       if (emailExists) {
-        res.status(400).json({
+        return res.status(400).json({
           errors: [
             {
               msg: "email is already exists!",
@@ -41,6 +41,7 @@ class UserController {
         password: await bcrypt.hash(req.body.password, 10),
         phone: req.body.phone,
         token: crypto.randomBytes(16).toString("hex"),
+        status: req.body.status,
       };
 
       // 4- INSERT USER INTO DB
@@ -49,7 +50,7 @@ class UserController {
       res.status(200).json(user);
     } catch (err) {
       console.error(err);
-      res.status(500).json({ err: "Internal Server Error" });
+      return res.status(500).json({ err: "Internal Server Error" });
     }
   }
 
@@ -65,7 +66,7 @@ class UserController {
       //2- CHECK IF APPLICANT EXISTS OR NOT
       const user = await this.userRepository.getUserById(req.params.id);
       if (!user) {
-        res.status(404).json({ msg: "Applicant not found !" });
+        return res.status(404).json({ msg: "Applicant not found !" });
       }
 
       //3- Prepare user object
@@ -83,7 +84,7 @@ class UserController {
       });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ err: "Internal Server Error" });
+      return res.status(500).json({ err: "Internal Server Error" });
     }
   }
 
@@ -93,7 +94,7 @@ class UserController {
       //1- CHECK IF APPLICANT  EXISTS OR NOT
       const user = await this.userRepository.getUserById(req.params.id);
       if (!user) {
-        res.status(404).json({ msg: "Applicant not found !" });
+        return res.status(404).json({ msg: "Applicant not found !" });
       }
 
       //2- Delete user object in db
@@ -103,7 +104,7 @@ class UserController {
       });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ err: "Internal Server Error" });
+      return res.status(500).json({ err: "Internal Server Error" });
     }
   }
 
@@ -117,7 +118,7 @@ class UserController {
       res.status(200).json(users);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ err: "Internal Server Error" });
+      return res.status(500).json({ err: "Internal Server Error" });
     }
   }
 
@@ -132,7 +133,7 @@ class UserController {
       res.status(200).json(user);
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: "Internal server error" });
+      return res.status(500).json({ error: "Internal server error" });
     }
   }
 }
