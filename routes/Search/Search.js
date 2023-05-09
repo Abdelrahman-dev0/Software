@@ -5,7 +5,6 @@ const UserRepository = require("../Applicants/UserRepository");
 const SearchRepository = require("./SearchRepository");
 const SearchService = require("./SearchService");
 const dbConnection = require("../../db/dbConnection");
-const admin = require("../../middleware/admin");
 const authorize = require("../../middleware/authorize");
 const router = express.Router();
 

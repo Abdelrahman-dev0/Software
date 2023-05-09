@@ -2,7 +2,7 @@
 /* 2- JobController class depends on an abstraction ( jobService ). */
 /* 3- The constructor takes a single parameter ( jobService ). ( DI ) */
 
-const { body, validationResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 
 class JobController {
   constructor(jobService) {
@@ -36,7 +36,9 @@ class JobController {
       });
     } catch (error) {
       console.log(error);
-      res.status(500).json({ errors: [{ msg: "Internal server error" }] });
+      return res
+        .status(500)
+        .json({ errors: [{ msg: "Internal server error" }] });
     }
   };
 

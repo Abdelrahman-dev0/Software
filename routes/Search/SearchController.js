@@ -1,7 +1,6 @@
 /* The SearchController class has a single responsibility of handling the search requests and responses. (SRP) /
 / SearchController class depends on an abstraction (searchService). /
 / The constructor takes a single parameter (searchService). (DI) */
-const { formatDate } = require("../../Utils/utils");
 
 class SearchController {
   constructor(searchService) {
@@ -36,7 +35,7 @@ class SearchController {
       }
 
       if (jobs.length === 0) {
-        res.status(404).json({ msg: "No search results found" });
+        return res.status(404).json({ msg: "No search results found" });
       } else {
         // Modify the jobs array to remove the qualifications_description field and add the qualifications field as an array of individual descriptions
         const modifiedJobs = jobs.map((job) => {
@@ -52,7 +51,9 @@ class SearchController {
       }
     } catch (error) {
       console.error(error);
-      res.status(500).json({ errors: [{ msg: "Internal server error" }] });
+      return res
+        .status(500)
+        .json({ errors: [{ msg: "Internal server error" }] });
     }
   }
 }
